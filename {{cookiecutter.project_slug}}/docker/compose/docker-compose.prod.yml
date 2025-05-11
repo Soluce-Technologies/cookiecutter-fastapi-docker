@@ -1,4 +1,4 @@
-name: {{cookiecutter.project.slug}}-prod
+name: {{cookiecutter.project_slug}}-prod
 
 
 services:
