@@ -1,0 +1,17 @@
+name: {{cookiecutter.project.slug}}-prod
+
+
+services:
+
+  app:
+    container_name: {{cookiecutter.project.slug}}-prod-app
+    image: {{cookiecutter.project.registry_url}}:latest
+    restart: always
+    environment:
+      - TZ=Europe/Paris
+    expose:
+      - '80'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.{{cookiecutter.project.slug}}_prod.entrypoints=web,websecure"
+      - "traefik.http.routers.{{cookiecutter.project.slug}}_prod.rule=Host(`{{cookiecutter.project.domain_name}}`)"

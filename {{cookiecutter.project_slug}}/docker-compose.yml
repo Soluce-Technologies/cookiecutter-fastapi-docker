@@ -1,4 +1,4 @@
-name: {{cookiecutter.project_slug}}
+name: {{cookiecutter.project.slug}}
 
 services:
   app:
@@ -7,7 +7,7 @@ services:
       context: .
       dockerfile: docker/dockerfile/app/Dockerfile
     ports:
-      - "{{cookiecutter.project_external_port}}:80"
+      - "{{cookiecutter.project_external.port}}:80"
     volumes:
       - ./src:/app/src
     command: uvicorn main:app --reload --host 0.0.0.0 --port 80

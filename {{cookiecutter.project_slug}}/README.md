@@ -1,4 +1,4 @@
-# {{cookiecutter.project_name}}
+# {{cookiecutter.project.name}}
 
 {{cookiecutter.project_short_description}}
 
@@ -15,11 +15,11 @@ docker compose up
 ```
 ## Access to the api 
 
-> <http://localhost:{{cookiecutter.project_external_port}}/>
+> <http://localhost:{{cookiecutter.project.external_port}}/>
 
 ## Access Swagger Documentation
 
-> <http://localhost:{{cookiecutter.project_external_port}}/docs>
+> <http://localhost:{{cookiecutter.project.external_port}}/docs>
 
 ## Project structure
 

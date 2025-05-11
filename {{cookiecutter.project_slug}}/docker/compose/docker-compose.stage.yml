@@ -1,0 +1,17 @@
+name: {{cookiecutter.project.slug}}-stage
+
+
+services:
+
+  app:
+    container_name: {{cookiecutter.project.slug}}-stage-app
+    image: {{cookiecutter.project.registry_url}}:${IMAGE_TAG:-latest}
+    restart: always
+    environment:
+      - TZ=Europe/Paris
+    expose:
+      - '80'
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.{{cookiecutter.project.slug}}_stage.entrypoints=web,websecure"
+      - "traefik.http.routers.{{cookiecutter.project.slug}}_stage.rule=Host(`staging.{{cookiecutter.project.domain_name}}`)"
