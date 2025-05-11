@@ -1,0 +1,13 @@
+{
+  "project_name": "Name of your project",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "project_short_description": "A short description of the project",
+  "project_external_port": "The docker external port to expose the service",
+  "full_name": "Your name",
+  "email": "you@example.com",
+  "release_date": "{% now 'local' %}",
+  "version": "0.1.0",
+  "_copy_without_render": [
+    "*ci.yaml"
+  ]
+}
