@@ -6,4 +6,4 @@ router = APIRouter(tags=["welcome"])
 
 @router.get("/")
 async def root():
-    return {"message": "Hello from {{cookiecutter.project.slug}} API!"}
+    return {"message": "Hello from {{cookiecutter.project_slug}} API!"}

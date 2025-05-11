@@ -1,11 +1,11 @@
-name: {{cookiecutter.project.slug}}-stage
+name: {{cookiecutter.project_slug}}-stage
 
 
 services:
 
   app:
-    container_name: {{cookiecutter.project.slug}}-stage-app
-    image: {{cookiecutter.project.registry_url}}:${IMAGE_TAG:-latest}
+    container_name: {{cookiecutter.project_slug}}-stage-app
+    image: {{cookiecutter.project_registry_url}}:${IMAGE_TAG:-latest}
     restart: always
     environment:
       - TZ=Europe/Paris
@@ -13,5 +13,5 @@ services:
       - '80'
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.{{cookiecutter.project.slug}}_stage.entrypoints=web,websecure"
-      - "traefik.http.routers.{{cookiecutter.project.slug}}_stage.rule=Host(`staging.{{cookiecutter.project.domain_name}}`)"
+      - "traefik.http.routers.{{cookiecutter.project_slug}}_stage.entrypoints=web,websecure"
+      - "traefik.http.routers.{{cookiecutter.project_slug}}_stage.rule=Host(`staging.{{cookiecutter.project_domain_name}}`)"

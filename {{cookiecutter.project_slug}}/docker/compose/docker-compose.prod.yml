@@ -4,8 +4,8 @@ name: {{cookiecutter.project.slug}}-prod
 services:
 
   app:
-    container_name: {{cookiecutter.project.slug}}-prod-app
-    image: {{cookiecutter.project.registry_url}}:latest
+    container_name: {{cookiecutter.project_slug}}-prod-app
+    image: {{cookiecutter.project_registry_url}}:latest
     restart: always
     environment:
       - TZ=Europe/Paris
@@ -13,5 +13,5 @@ services:
       - '80'
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.{{cookiecutter.project.slug}}_prod.entrypoints=web,websecure"
-      - "traefik.http.routers.{{cookiecutter.project.slug}}_prod.rule=Host(`{{cookiecutter.project.domain_name}}`)"
+      - "traefik.http.routers.{{cookiecutter.project_slug}}_prod.entrypoints=web,websecure"
+      - "traefik.http.routers.{{cookiecutter.project_slug}}_prod.rule=Host(`{{cookiecutter.project_domain_name}}`)"

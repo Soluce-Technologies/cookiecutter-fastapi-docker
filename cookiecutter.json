@@ -1,16 +1,12 @@
 {
-  "project": {
-    "name": "My Project",
-    "slug": "{{ cookiecutter.project.name.lower().replace(' ', '-') }}",
-    "description": "A sample project",
-    "external_port": "8888",
-    "registry_url": "registry.gitlab.example.com/project/path",
-    "domain_name": "example.com"
-  },
-  "author": {
-    "full_name": "Your Name",
-    "email": "you@example.com"
-  },
+  "project_name": "Name of your project",
+  "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+  "project_short_description": "A short description of the project",
+  "project_external_port": "8888",
+  "project_domain_name": "example.com",
+  "project_registry_url": "registry.gitlab.example.com/project/path",
+  "full_name": "Your name",
+  "email": "you@example.com",
   "release_date": "{% now 'local' %}",
   "version": "0.1.0"
 }
