@@ -18,4 +18,10 @@ class Settings(BaseSettings):
 
     ENVIRONMENT: Optional[Environment] = "development"
 
+    REDIS_SERVER: str
+    REDIS_PORT: int
+
+    CELERY_BROKER_URL: str
+    CELERY_RESULT_BACKEND: str
+
     model_config = SettingsConfigDict(env_file=find_dotenv(), extra="allow")
