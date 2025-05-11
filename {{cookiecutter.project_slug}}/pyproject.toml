@@ -25,9 +25,18 @@ dependencies = [
     "uvicorn[standard]>=0.32,<0.33",
     "gunicorn>=23.0,<24.0",
     # others
-    "requests>=2.32.3"
-
-
+    "requests>=2.32.3",
+    #task
+    "celery[redis]>=5.4.0",
+    "kombu>=5.4.2",
+    "redis>=5.2.0",
+    "watchdog>=6.0.0",
+    "requests>=2.32.3",
+    "celery-redbeat>=2.2.0",
+    "flower>=0.3.1",
+    # Sentry
+    "sentry-sdk[fastapi]>=2.19.2",
+    "sentry-sdk[celery]>=2.19.2",
 
 ]
 classifiers = [
